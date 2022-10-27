@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_demo/controllers/auth/auth_controller.dart';
 import 'package:my_demo/controllers/localization_controller.dart';
+import 'package:my_demo/controllers/switcher_cont.dart';
 import 'package:my_demo/controllers/theme_controller.dart';
 import 'package:my_demo/core/middleware/auth_middleware.dart';
 import 'package:my_demo/core/constants/my_themes.dart';
@@ -10,6 +11,8 @@ import 'package:my_demo/get_pages.dart';
 import 'package:my_demo/core/services/binding.dart';
 import 'package:my_demo/view/screens/account/user_account.dart';
 import 'package:my_demo/view/screens/auth/sign_in_screen.dart';
+import 'package:my_demo/view/screens/setting/setting_screen.dart';
+import 'package:my_demo/view/screens/theme/theme_screen.dart';
 // import 'package:my_demo/view/screens/home/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/localization/localization.dart';
@@ -23,6 +26,7 @@ main() async {
   mySharedPrefes = await SharedPreferences.getInstance();
   Get.lazyPut(() => AuthController(), fenix: true);
   Get.lazyPut(() => ThemeContorller(), fenix: true);
+  Get.put(() => SwitcherContrImp());
   await AuthMiddleWare;
   FirebaseApp defaultApp = await Firebase.initializeApp();
 
@@ -47,7 +51,7 @@ class MyApp extends StatelessWidget {
       themeMode: themeContorller.myThemeMode,
       locale: locallizationsController.initalLang,
       translations: TheLocalization(),
-      home: UserAccount(),
+      home: ThemeScreen(),
       // home: SuccessfullySignedupScreen(),
       // home: SuccessfullyResetedPasswordScreen(),
       // just i'll use home proberty for testing

@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:my_demo/core/constants/constants.dart';
 import 'package:my_demo/core/shared/title_builder.dart';
-
 import '../../../../core/constants/app_color.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../core/localization/localization.dart';
@@ -14,17 +13,18 @@ class OffersAndDiscounts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size theSize = MediaQuery.of(context).size;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TitleBuilder(
-          theTitle: AppLocal.offersAndDiscounts.tr,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: theDefaultPadding,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: theDefaultPadding,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TitleBuilder(
+            theTitle: AppLocal.offersAndDiscounts.tr,
           ),
-          child: Container(
+          emptySpace,
+          Container(
             height: theSize.height * .3,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -83,9 +83,9 @@ class OffersAndDiscounts extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

@@ -7,15 +7,9 @@ class TitleBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        // horizontal: theDefaultPadding,
-        vertical: 8,
-      ),
-      child: Text(
-        theTitle,
-        style: Theme.of(context).textTheme.headline6,
-      ),
+    return Text(
+      theTitle,
+      style: Theme.of(context).textTheme.headline6,
     );
   }
 }

@@ -10,7 +10,7 @@ class MyInitalBindings implements Bindings {
     Get.lazyPut(() => CartController(), fenix: true);
     // await Get.put(BottomNvaBarControllerImp(), permanent: true);
     // Get.lazyPut(() => AuthController(), fenix: true);
-    Get.lazyPut(() => ApiController(), fenix: true);
+    Get.put(() => ApiController(), permanent: true);
   }
 }
 

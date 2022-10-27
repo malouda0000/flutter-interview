@@ -17,14 +17,26 @@ class BigBurgurePage extends StatelessWidget {
     return ListView(
       // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomSearchBar(),
-        ItemCardBuilder(),
-        OffersAndDiscounts(),
-        // emptySpace,
-        TitleBuilder(
-          theTitle: AppLocal.offersAndDiscounts.tr,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: theDefaultPadding,
+          ),
+          child: CustomSearchBar(),
         ),
-        // emptySpace,
+        emptySpace,
+        ItemCardBuilder(),
+        emptySpace,
+        OffersAndDiscounts(),
+        emptySpace,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: theDefaultPadding,
+          ),
+          child: TitleBuilder(
+            theTitle: AppLocal.offersAndDiscounts.tr,
+          ),
+        ),
+        emptySpace,
         ItemCardBuilder(),
       ],
     );

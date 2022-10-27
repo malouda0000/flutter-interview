@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_demo/controllers/home_screen_controller.dart';
 import 'package:my_demo/core/constants/app_color.dart';
+import 'package:my_demo/core/constants/constants.dart';
 import 'package:my_demo/core/shared/bottom%20navigation%20bar/bottom_nav_bar.dart';
 import 'package:my_demo/core/shared/bottom%20navigation%20bar/widgets/cust_bott_nav_item.dart';
 import 'package:my_demo/core/shared/the%20appbar/the_app_bar.dart';
@@ -35,6 +36,9 @@ class MainScreen extends StatelessWidget {
         bottomNavigationBar: TheBottomNavBar(),
         body: homeScreenControllerImp.mainAppScreens
             .elementAt(homeScreenControllerImp.currentHomeScreen),
+
+        // body: homeScreenControllerImp.mainAppScreens
+        //     .elementAt(homeScreenControllerImp.currentHomeScreen),
       );
     });
   }

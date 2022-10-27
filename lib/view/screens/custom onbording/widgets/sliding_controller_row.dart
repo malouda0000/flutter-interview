@@ -44,16 +44,16 @@ class NextButton extends GetView<OnBordingControllerImp> {
       child: MaterialButton(
         elevation: 0,
         color: AppColor.kPrimaryColor,
+        onPressed: () async {
+          await mySharedPrefes!.setBool('firstAppInit', true);
+          controller.next();
+        },
         child: Text(
           AppLocal.next.tr,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(
                 color: Theme.of(context).scaffoldBackgroundColor,
               ),
         ),
-        onPressed: () async {
-          await mySharedPrefes!.setBool('firstAppInit', true);
-          controller.next();
-        },
       ),
     );
   }

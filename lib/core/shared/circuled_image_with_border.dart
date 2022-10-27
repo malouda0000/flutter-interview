@@ -85,9 +85,12 @@ class SmallCirlcIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 0,
-      right: 0,
+      bottom: 9,
+      right: 9,
       child: Container(
+        alignment: Alignment.center,
+        height: 24,
+        width: 24,
         // padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
           boxShadow: [
@@ -112,16 +115,25 @@ class SmallCirlcIcon extends StatelessWidget {
           // color: AppColor.kTextColor,
           color: AppColor.kPrimaryColor,
         ),
-        child: IconButton(
-          iconSize: 20,
-          // color: AppColor.kPrimaryColor,
-          // color: AppColor.kTextColor,
+        // child: IconButton(
+        //   iconSize: 15,
+        //   // color: AppColor.kPrimaryColor,
+        //   // color: AppColor.kTextColor,
 
-          onPressed: iconPressed == null ? () {} : iconPressed,
-          icon: Icon(
+        //   onPressed: iconPressed == null ? () {} : iconPressed,
+        //   icon: Icon(
+        //     theSmallCirlIcon == null
+        //         ? Icons.mode_edit_outline_rounded
+        //         : theSmallCirlIcon,
+        //   ),
+        // ),
+        child: GestureDetector(
+          onTap: iconPressed == null ? () {} : iconPressed,
+          child: Icon(
             theSmallCirlIcon == null
                 ? Icons.mode_edit_outline_rounded
                 : theSmallCirlIcon,
+            size: 15,
           ),
         ),
       ),

@@ -4,8 +4,7 @@ import 'package:my_demo/controllers/home_screen_controller.dart';
 import 'package:my_demo/view/screens/home/categores_page.dart';
 import 'package:my_demo/view/screens/home/temp_page.dart';
 import 'package:my_demo/view/screens/home/widgets/big_burger_page.dart';
-import 'package:my_demo/view/screens/home/widgets/items_title_builder.dart';
-import 'package:my_demo/view/screens/home/widgets/the_category_item.dart';
+import 'package:my_demo/view/screens/home/widgets/cate_title_row.dart';
 
 List<Widget> homePagesList = [
   // used for the home screen taps changer
@@ -27,54 +26,35 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: SizedBox(
-            // categores row
-            height: 50,
-            child: GetBuilder<HomeScreenControllerImp>(
-              builder: ((homeScreenControllerImp) {
-                return ListView.builder(
-
-                    // categores list
-                    itemCount: homePagesList.length,
-                    scrollDirection: Axis.horizontal,
-                    // shrinkWrap: true,
-                    itemBuilder: (context, i) {
-                      // return items[index];
-
-                      return ItemsTitleBuilder(
-                        title: titlesList[i],
-                        pressed: () async {
-                          await homeScreenControllerImp.onPageJumpededTo(i);
-                        },
-                        isActive: i == homeScreenControllerImp.currentPage
-                            ? true
-                            : false,
-// if( index == homeScreenControllerImp.currentPage ){ return true;} else { return false;},
-                      );
-                    });
-              }),
-            ),
-          ),
-        ),
+        CategoresTitleRow(),
         Expanded(
-            // home page body
-            // flex: 10,
-            child: GetBuilder<HomeScreenControllerImp>(
-          builder: ((homeScreenControllerImp) {
-            return PageView.builder(
-              controller: homeScreenControllerImp.pageController,
-              onPageChanged: (value) {
-                homeScreenControllerImp.onPageChanged(value);
-              },
-              itemCount: homePagesList.length,
-              itemBuilder: (context, index) {
-                return homePagesList[index];
-              },
-            );
-          }),
-        )),
+          child: HomePageViewBuil(),
+        ),
       ],
+    );
+  }
+}
+
+class HomePageViewBuil extends StatelessWidget {
+  const HomePageViewBuil({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<HomeScreenControllerImp>(
+      builder: ((homeScreenControllerImp) {
+        return PageView.builder(
+          controller: homeScreenControllerImp.pageController,
+          onPageChanged: (value) {
+            homeScreenControllerImp.onPageChanged(value);
+          },
+          itemCount: homePagesList.length,
+          itemBuilder: (context, index) {
+            return homePagesList[index];
+          },
+        );
+      }),
     );
   }
 }

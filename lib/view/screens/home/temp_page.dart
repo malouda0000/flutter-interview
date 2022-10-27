@@ -13,6 +13,7 @@ class TempPage extends StatelessWidget {
         OffersAndDiscounts(),
         emptySpace,
         ItemCardBuilder(),
+        emptySpace,
       ],
     );
   }

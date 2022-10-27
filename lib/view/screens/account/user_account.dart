@@ -20,7 +20,9 @@ class UserAccount extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(
+            theDefaultPadding,
+          ),
           child: ListView(
             children: [
               emptySpace,
@@ -50,6 +52,7 @@ class EditUserDetailsCard extends StatelessWidget {
           emptySpace,
           TitleBuilder(theTitle: 'user name: '),
           TheInputField(
+            // edit user name
             theValidator: (text) {
               return null;
             },
@@ -66,6 +69,8 @@ class EditUserDetailsCard extends StatelessWidget {
           emptySpace,
           TitleBuilder(theTitle: 'user phone: '),
           TheInputField(
+            // edit user phone
+
             theValidator: (text) {
               return null;
             },
@@ -79,6 +84,7 @@ class EditUserDetailsCard extends StatelessWidget {
             isPassword: false,
             theInputType: TextInputType.text,
           ),
+          emptySpace,
           emptySpace,
         ],
       ),

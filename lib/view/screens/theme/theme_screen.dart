@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 import 'package:my_demo/controllers/theme_controller.dart';
 import 'package:my_demo/core/constants/constants.dart';
 import 'package:my_demo/core/shared/title_builder.dart';
+import 'package:my_demo/view/screens/theme/widgets/light_dark_switcher.dart';
 import 'package:my_demo/view/screens/theme/widgets/the_color_picker.dart';
 import '../../../core/shared/big_button.dart';
 import '../../../core/shared/bottom navigation bar/bottom_nav_bar.dart';
-import '../setting/widgets/darkness_row.dart';
+import 'widgets/darkness_row.dart';
 
 class ThemeScreen extends StatelessWidget {
   const ThemeScreen({Key? key}) : super(key: key);
@@ -21,6 +22,10 @@ class ThemeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            emptySpace,
+
+            LightDarkSwitcher(),
+            emptySpace,
             BigggButton(
               theLeadingIcon: Icons.dark_mode,
               theButtonTitle: 'change theme ',
@@ -61,7 +66,7 @@ class ThemeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: TheBottomNavBar(),
+      // bottomNavigationBar: TheBottomNavBar(),
     );
   }
 }
