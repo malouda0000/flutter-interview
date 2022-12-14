@@ -4,7 +4,7 @@ import 'package:my_demo/view/screens/home/widgets/custom_search_bar.dart';
 import 'package:my_demo/view/screens/setting/widgets/settign_list_tile.dart';
 import 'package:my_demo/get_pages.dart';
 import '../../../../core/localization/localization.dart';
-import '../../../../core/shared/the_input_field.dart';
+
 import '../../../core/shared/reserved_rights_row.dart';
 
 class SettingScreen extends StatefulWidget {

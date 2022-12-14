@@ -28,4 +28,22 @@ class ThemeContorller extends GetxController {
       // print('theme changed to dark theme');
     }
   }
+
+  // changeThemeService() async {
+  //   if (Get.isDarkMode == true) {
+  //     Get.changeTheme(MyThemes.customLightTheme);
+
+  //     mySharedPrefes!.setBool('dark', false);
+  //     // print('theme changed to light theme');
+  //   }
+
+  //   if (!Get.isDarkMode) {
+  //     Get.changeTheme(MyThemes.customDarkTheme);
+
+  //     mySharedPrefes!.setBool('dark', true);
+
+  //     // print('theme changed to dark theme');
+  //   }
+  // }
+
 }

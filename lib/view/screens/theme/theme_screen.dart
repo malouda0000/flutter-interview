@@ -27,10 +27,11 @@ class ThemeScreen extends StatelessWidget {
             LightDarkSwitcher(),
             emptySpace,
             BigggButton(
-              theLeadingIcon: Icons.dark_mode,
-              theButtonTitle: 'change theme ',
-              onTaped: () => theThemeController.changeThemeService(),
-            ),
+                theLeadingIcon: Icons.dark_mode,
+                theButtonTitle: 'change theme ',
+                onTaped: () async {
+                  await theThemeController.changeThemeService();
+                }),
             // Container(
             //   padding: EdgeInsets.all(15),
             //   // margin: EdgeInsets.all(20),
